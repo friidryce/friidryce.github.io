@@ -1,24 +1,45 @@
 ---
 import { SOCIAL_LINKS } from '../constants/social';
 import SkillsList from "../React/SkillsList.tsx";
+import { ABOUT } from '../constants/descriptions';
 ---
 
 <section class="text-[var(--white)] mt-12 md:mt-0" id="home">
-  <div class="max-w-5xl mx-auto space-y-8 md:py-36 pb-14">
-    <div class="text-left space-y-4">
-      <p class="text-md md:text-lg text-[var(--white-icon)] shiny-white">
-        Hi, I'm Jason Au
-      </p>
-      <div class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4">
-        <h1 class="text-[var(--white)] text-5xl md:text-6xl font-medium text-pretty leading-none">
-          Software <br /> Developer
-        </h1>
-        <p class="text-md md:text-2xl text-[var(--white-icon)]">
-          Transforming ideas into interactive and seamless digital experiences
-          with cutting-edge <span class="text-[var(--sec)] shiny-sec">frontend</span> development.
+  <div class="max-w-5xl mx-auto space-y-12 md:py-36 pb-14">
+    <div class="text-left space-y-12 flex flex-col items-center">
+      <h1 class="text-3xl md:text-5xl text-white font-bold shiny-white">
+        {ABOUT.name}
+      </h1>
+      <div class="flex flex-col items-center space-y-8">
+        <img 
+          src="./public/img/pfp.webp" 
+          alt="Profile Picture"
+          class="w-48 h-48 rounded-full object-cover shadow-lg border-2 border-[var(--white-icon-tr)]"
+          loading="lazy"
+        />
+        <p class="text-sm md:text-lg text-white text-center max-w-2xl">
+            {ABOUT.summary1}{ABOUT.summary2}
+        </p>
+        <p class="text-sm md:text-lg text-white text-center max-w-2xl">
+            {ABOUT.summary3}
         </p>
       </div>
-      <div class="flex justify-start gap-2 pt-3 md:pt-6">
+      <div class="w-full max-w-md rounded-xl overflow-hidden border border-[var(--white-icon-tr)] bg-[#1414149c]">
+        <iframe 
+          width="100%" 
+          height="166" 
+          scrolling="no" 
+          frameborder="no" 
+          allow="autoplay" 
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2029115692&color=%23A476FF&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
+          class="rounded-t-xl block"
+        ></iframe>
+        <div class="p-2 text-xs text-[var(--white-icon)] hover:text-white transition-colors">
+          <a href="https://soundcloud.com/friidryce" title="DJ ent" target="_blank" class="hover:text-[var(--white)] transition-colors">DJ ent</a> · 
+          <a href="https://soundcloud.com/friidryce/nan-slap-1" title="NAN SLAP 1" target="_blank" class="hover:text-[var(--white)] transition-colors">NAN SLAP 1</a>
+        </div>
+      </div>
+      <div class="flex justify-center gap-2">
         {Object.values(SOCIAL_LINKS).map((link) => (
           <a 
             target="_blank" 
@@ -32,33 +53,8 @@ import SkillsList from "../React/SkillsList.tsx";
       </div>
     </div>
   
-    <div class="flex flex-col lg:flex-row items-center gap-8">
+    <div class="flex flex-col items-center">
       <SkillsList client:load />
     </div>
   </div>
 </section>
-
-<style is:global>
-.shiny-sec {
-    background: linear-gradient(
-        135deg,
-        #A476FF 25%,
-        #eee5ff 50%,
-        #A476FF 75%
-    );
-    background-size: 400% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: shine 3s linear infinite;
-}
-
-@keyframes shine {
-    0% {
-        background-position: 100% 50%;
-    }
-    30%, 70% {
-        background-position: 0% 50%;
-    }
-}
-</style>
