@@ -34,13 +34,13 @@ import { SOCIAL_LINKS } from '../constants/social';
             {
               desc: "Styled with",
               name: "TailwindCSS",
-              icon: "/svg/tailwindcss.svg",
+              icon: "/svg/tailwind.svg",
               alt: "TailwindCSS Logo"
             },
             {
               desc: "Deployed on",
               name: "GitHub Pages",
-              icon: "/svg/vercel.svg",
+              icon: "/svg/github.svg",
               alt: "GitHub Pages Logo"
             }
           ].map((tech) => (
@@ -49,7 +49,7 @@ import { SOCIAL_LINKS } from '../constants/social';
               <img 
                 src={tech.icon} 
                 alt={tech.alt} 
-                class="h-5 w-5 object-contain filter brightness-0 invert opacity-50"
+                class="h-5 w-5 object-contain"
                 loading="lazy"
               />
               <span class="text-[var(--white-icon)] text-sm">{tech.name}</span>
