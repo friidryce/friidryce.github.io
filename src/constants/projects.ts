@@ -1,10 +1,10 @@
+import snobify from "../../public/snobify.png";
 import svgl from "../../public/svgl.png";
-import stockin from "../../public/stockin.png";
 
 export const PROJECTS = [
     {
       title: "Snobify",
-      image: stockin as ImageMetadata,
+      image: snobify as ImageMetadata,
       link: "https://github.com/friidryce/Snobify/",
       preview: "https://stockin-demo.vercel.app",
       status: "In Development",
